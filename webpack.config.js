@@ -12,13 +12,14 @@ const config = {
         library: {
             type: 'module',
         },
-    libraryTarget: 'commonjs'
+        libraryTarget: 'commonjs'
     },
     externals: {
         react: 'react',
         reactDOM: 'react-dom',
         "react-native": 'react-native'
     },
+    mode: "development",
     devtool: 'source-map',
     module: {
         rules: [
