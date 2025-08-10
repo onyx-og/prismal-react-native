@@ -2,7 +2,7 @@ import React from "react";
 import ComponentProps from '../Component';
 import { View, ViewStyle, StyleSheet, StyleProp } from "react-native";
 // import { setAccentStyle } from '../../utils/colors';
-import { getBorderRadius, BorderRadius, getBoxElevation } from '../../utils';
+import { getBorderRadius, getPadding, getBoxElevation } from '../../utils';
 
 export interface CardProps extends ComponentProps<ViewStyle>  {
     header?: React.ReactNode;
@@ -15,20 +15,19 @@ export interface CardProps extends ComponentProps<ViewStyle>  {
     orientation?: "row" | "column"
 }
 
-const Card: React.FC<CardProps> = ( props ) => {
+const Card = ( props: CardProps ) => {
     const {
         header, headerStyle,
         footer, footerStyle,
         accent, accentDark, accentLight,
-        children, bodyStyle,
+        children, bodyStyle, padding = "s",
         orientation = "column", style,
         elevation = 1, borderRadius = "small"
     } = props;
 
-    let style_ = {}
-
     const boxElevation = getBoxElevation(elevation);
     const borderRadius_ = getBorderRadius(borderRadius)
+    const boxPadding = getPadding(padding);
 
     const styles: {[key: string]: ViewStyle} = {
         component: {
@@ -37,7 +36,8 @@ const Card: React.FC<CardProps> = ( props ) => {
             backgroundColor: "white",
             boxShadow: boxElevation,
             borderRadius: borderRadius_,
-            overflow: "hidden"
+            overflow: "hidden",
+            padding: boxPadding,
         },
         body: {
             padding: 5,
@@ -50,7 +50,6 @@ const Card: React.FC<CardProps> = ( props ) => {
         
     };
 
-    // style_ = Object.assign(style_, styles.component);
     if (style) Object.assign(styles.component, style);
 
 

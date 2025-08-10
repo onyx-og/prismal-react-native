@@ -1,3 +1,5 @@
+import {DimensionValue} from "react-native";
+
 export * from "./colors";
 export type Elevation = 0 | 1 | 2 | 3 | 4 // | 5
 export const setElevation = (className: string, elevation: Elevation = 0 ) => {
@@ -40,6 +42,30 @@ export const getBoxElevation = (
     }
 
     return boxShadow;
+}
+export const getPadding = (
+    padding?: 'xs' | "s" | 'm' | 'l'
+) => {
+    let padding_: DimensionValue = 0.25;
+
+    switch(padding) {
+        case "xs":
+            padding_ = 0.25;
+            break;
+        case "s": 
+            padding_ = 0.5;
+            break;
+        case "m":
+            padding_ = 0.75;
+            break;
+        case "l":
+            padding_ = 1;
+            break;
+        default:
+            padding_ = 0.25;
+    }
+
+    return padding_;
 }
 export type BorderRadius = "none" | "extra-small" | "small" | "medium" 
     | "large" | "extra-large" | "full";
