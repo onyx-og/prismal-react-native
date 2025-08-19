@@ -11,5 +11,5 @@ export interface CardProps extends ComponentProps<ViewStyle> {
     padding?: 'xs' | "s" | 'm' | 'l';
     orientation?: "row" | "column";
 }
-declare const Card: React.FC<CardProps>;
+declare const Card: (props: CardProps) => import("react/jsx-runtime").JSX.Element;
 export default Card;
