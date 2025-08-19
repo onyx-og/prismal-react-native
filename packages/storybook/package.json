@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "storybook dev -p 6006",
-    "build": "storybook build",
+    "build": "storybook build -o ../../docs",
     "storybook-generate": "sb-rn-get-stories",
     "storybook": "cross-env EXPO_PUBLIC_STORYBOOK_ENABLED='true' expo start",
     "storybook:ios": "cross-env EXPO_PUBLIC_STORYBOOK_ENABLED='true' expo start --ios",
@@ -26,8 +26,7 @@
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
     "react-native-svg": "15.11.2",
-    "react-native-web": "^0.20.0",
-    "@prismal/react-native": "file:../../"
+    "react-native-web": "^0.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
