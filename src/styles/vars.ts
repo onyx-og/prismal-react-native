@@ -3,6 +3,7 @@ export const COLORS = {
   light: '#FFFFFF', // Assuming this is what vars.$light-color is
   dark: '#333333',  // Assuming vars.$dark-color
   primary: '#007BFF', // Assuming vars.$primary-color
+  primaryLight: '#7fbdff',
   grey: 'grey',
 };
 

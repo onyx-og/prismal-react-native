@@ -11,37 +11,38 @@ export const setElevation = (className: string, elevation: Elevation = 0 ) => {
 export const getBoxElevation = (
     elevation: Elevation = 0
 ) => {
-    let boxShadow = "0";
+    let boxShadowPrimary = "0",
+        boxShadowSecondary = "0";
 
     switch(elevation) {
         case 0:
-           boxShadow = "0"
-        //    _style['--box-elevation-hover'] = "0"
+           boxShadowPrimary = "0"
+           boxShadowSecondary = "0"
             break;
         case 1:
-           boxShadow = "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px";
-        //    _style['--box-elevation-hover'] = "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px";
+           boxShadowPrimary = "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px";
+            boxShadowSecondary = "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px";
            break;
         case 2:
-           boxShadow = "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"
-        //    _style['--box-elevation-hover'] = "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
+           boxShadowPrimary = "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"
+            boxShadowSecondary = "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
            break;
         case 3:
-           boxShadow = "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
-        //    _style['--box-elevation-hover'] = "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
+           boxShadowPrimary = "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
+            boxShadowSecondary = "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
            break;
         case 4:
-           boxShadow = "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
-        //    _style['--box-elevation-hover'] = "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+           boxShadowPrimary = "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
+            boxShadowSecondary = "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
            break;
         // case 5:
-        //    boxShadow = "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+        //    boxShadowPrimary = "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
         //    break;
         default:
-            boxShadow = "0";
+            boxShadowPrimary = "0";
     }
 
-    return boxShadow;
+    return [boxShadowPrimary,boxShadowSecondary];
 }
 export const getPadding = (
     padding?: 'xs' | "s" | 'm' | 'l'

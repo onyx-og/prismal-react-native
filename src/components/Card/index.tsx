@@ -34,7 +34,7 @@ const Card = ( props: CardProps ) => {
             display: "flex",
             flexDirection: orientation,
             backgroundColor: "white",
-            boxShadow: boxElevation,
+            boxShadow: boxElevation[0],
             borderRadius: borderRadius_,
             overflow: "hidden",
             padding: boxPadding,
